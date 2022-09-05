@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div style="display: flex; align-items: start; justify-content: start; height: 100vh; padding: 20px;">
+      <button class="pure-button" onclick="toggleFullScreen()">Toggle full screen</button>
+      <p id="appmsg"></p>
+      <p id="appmsg2"></p>
+    </div>
+
+    <script>
+      // const electron = require('electron')
+      // const elWindow = electron.remote.getCurrentWindow()
+
+      const toggleFullScreen = window.api.toggleFullScreen;
+
+      window.addEventListener('keydown', function (e) {
+        // console.log(e.metaKey)
+        document.getElementById('appmsg').innerText = e.metaKey
+        document.getElementById('appmsg2').innerText = e.keyCode
+      })
+    </script>
+  </body>
+</html>
